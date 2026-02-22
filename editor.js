@@ -49,7 +49,8 @@ const presets = {
  */
 class CloudStorage {
     constructor() {
-        this.apiBase = 'http://localhost:3000'; // Change this to your Render URL later
+        // Use current domain for API calls (works for both localhost and Render)
+        this.apiBase = window.location.origin;
         this.isOnline = false;
     }
 
@@ -69,7 +70,7 @@ class CloudStorage {
         const status = document.getElementById('syncStatus');
         if (this.isOnline && status) {
             status.classList.add('online');
-            status.innerHTML = '<i data-lucide="cloud"></i> <span>Cloud Synced</span>';
+            status.innerHTML = '<i data-lucide="cloud"></i> <span>Connected to Cloud</span>';
             if (window.lucide) window.lucide.createIcons();
         }
     }
