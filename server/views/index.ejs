@@ -10,19 +10,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
     <div class="app-container">
         <header>
             <h1>Photo<span>Refine</span></h1>
+            <div class="auth-controls" id="authControls">
+                <a href="/login" class="secondary-btn btn-small" style="text-decoration:none">Login</a>
+                <a href="/login" class="primary-btn btn-small" style="text-decoration:none">Register</a>
+            </div>
+            <div class="user-info hidden" id="userInfo">
+                <img id="userAvatar" src="" class="hidden" alt="Avatar"
+                    style="width:24px; height:24px; border-radius:50%; object-fit:cover;">
+                <span id="userNameDisplay"></span>
+                <button id="logoutBtn" class="secondary-btn btn-small logout-btn">
+                    <i data-lucide="log-out"></i>
+                </button>
+            </div>
             <div class="sync-status" id="syncStatus">
                 <i data-lucide="cloud-off"></i>
                 <span>Offline Mode</span>
             </div>
             <p>Professional Image Processing Powered by HTML5 & Cloud</p>
         </header>
+
+        <!-- Auth Modals Removed - See login.ejs -->
 
         <main>
             <div class="editor-layout">
