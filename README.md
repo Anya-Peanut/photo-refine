@@ -1,6 +1,6 @@
 # PhotoRefine 📸
 
-PhotoRefine is a professional-grade, browser-based image editor built with modern web technologies. It provides a sleek, high-performance interface for quick photo adjustments, professional presets, and persistent edit history using IndexedDB.
+PhotoRefine is a professional-grade, browser-based image editor built with modern web technologies. It provides a sleek, high-performance interface for quick photo adjustments, professional presets, and cloud-synced edit history using MongoDB and Google OAuth.
 
 ![Preview](demo/screenshot.png) 
 
@@ -16,42 +16,49 @@ PhotoRefine is a professional-grade, browser-based image editor built with moder
   - Contrast & Saturation (Real-time Canvas filters).
   - Tonal Controls: Highlights and Shadows management.
   - Detail: Convolution-based Sharpening.
-- **Persistent Edit History**: Powered by **IndexedDB**, allowing you to save, reload, and manage your edits even after closing the browser.
+- **Cloud-Synced History**: Powered by **MongoDB** and **Google OAuth**, allowing you to securely save, reload, and manage your edits across devices.
 - **High Performance**: Optimized pixel processing and scaled canvas rendering for a snappy experience.
 
 ## 🖼️ Before & After
 
 | Before | After |
 | :---: | :---: |
-| ![Original Image](demo/before3.png) | ![Edited Image](demo/after3.png) |
-| ![Original Image](demo/before.png) | ![Edited Image](demo/after.png) |
-
-
-## 🎥 Video Demo
-
-![Demo Video](demo/demo_group1.webp)
+| <img src="demo/before3.png" width="250" height="250" alt="Original Image"> | <img src="demo/after3.png" width="250" height="250" alt="Edited Image"> |
+| <img src="demo/before.png" width="250" height="250" alt="Original Image"> | <img src="demo/after.png" width="250" height="250" alt="Edited Image"> |
 
 
 
 ## 🛠️ Technology Stack
 
-- **HTML5 Canvas**: Core image processing engine.
+### Frontend
+- **HTML5 Canvas**: Core image processing engine (zero server cost for image manipulation).
 - **Vanilla CSS**: Premium styling with glassmorphism and responsive layout.
-- **JavaScript (Vanilla)**: Preset logic, IndexedDB management, and custom convolution kernels.
+- **JavaScript (Vanilla)**: Preset logic, custom convolution kernels, and CropperJS integration.
 - **Lucide Icons**: Clean, consistent iconography.
-- **IndexedDB**: Large-scale browser storage for image persistence.
+
+### Backend
+- **Node.js & Express**: Fast, lightweight server handling API routes and templating (EJS).
+- **MongoDB & Mongoose**: Secure database for storing user profiles and image edit history.
+- **Passport.js**: Robust authentication using Google OAuth 2.0.
 
 ## 🚀 Getting Started
-
-No installation required! Just follow these steps:
 
 1. Clone this repository:
    ```bash
    git clone https://github.com/TranHuuDat2004/photo-refine.git
+   cd photo-refine/server
    ```
-2. Open `index.html` in any modern web browser (Chrome, Firefox, Safari, Edge).
-3. Drag and drop an image or click to upload.
-4. Start editing!
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up environment variables:
+   - Create a `.env` file in the `server` directory and configure your MongoDB URI and Google OAuth credentials (see `.env.example`).
+4. Start the server:
+   ```bash
+   npm start
+   ```
+5. Open `http://localhost:3000` in any modern web browser.
 
 ## 💾 Saving Your Work
 
