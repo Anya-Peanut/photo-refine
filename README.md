@@ -2,7 +2,7 @@
 
 PhotoRefine is a professional-grade, browser-based image editor built with modern web technologies. It provides a sleek, high-performance interface for quick photo adjustments, professional presets, and persistent edit history using IndexedDB.
 
-![Preview](demo/demo1.jpg) <!-- This is a placeholder, user can swap it later -->
+![Preview](demo/screenshot.png) 
 
 ## ✨ Features
 
@@ -18,6 +18,20 @@ PhotoRefine is a professional-grade, browser-based image editor built with moder
   - Detail: Convolution-based Sharpening.
 - **Persistent Edit History**: Powered by **IndexedDB**, allowing you to save, reload, and manage your edits even after closing the browser.
 - **High Performance**: Optimized pixel processing and scaled canvas rendering for a snappy experience.
+
+## 🖼️ Before & After
+
+| Before | After |
+| :---: | :---: |
+| ![Original Image](demo/before3.png) | ![Edited Image](demo/after3.png) |
+| ![Original Image](demo/before.png) | ![Edited Image](demo/after.png) |
+
+
+## 🎥 Video Demo
+
+![Demo Video](demo/demo_group1.webp)
+
+
 
 ## 🛠️ Technology Stack
 

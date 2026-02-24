@@ -835,6 +835,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
     animation: modalSlideIn 0.3s ease;
 }
 
+#bgRemoveBtn:hover {
+    background: #fee2e2 !important;
+}
+
 @keyframes modalSlideIn {
     from {
         transform: translateY(20px);
